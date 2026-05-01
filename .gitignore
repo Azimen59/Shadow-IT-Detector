@@ -1,0 +1,14 @@
+# PowerShell
+.vscode/
+.idea/
+*.suo
+*.user
+*.vs/
+*.DotSettings.user
+*.swp
+*~.nib
+packages/
+bin/
+obj/
+Debug/
+Release/
