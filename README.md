@@ -5,7 +5,6 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-7.2%2B-blue.svg)](https://aka.ms/powershell)
 [![Azure](https://img.shields.io/badge/Azure%20Automation-Compatible-green.svg)](https://learn.microsoft.com/azure/automation/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
 
 ---
 
