@@ -31,7 +31,7 @@ Dans les environnements Microsoft 365 / Entra ID, les applications tierces s'acc
 
 Le **Shadow IT Detector V5.2** est un moteur d'audit PowerShell 7 qui :
 
-- 🔍 **Scanne massivement** tous les Service Principals d'un tenant (100 000+ applications supportées)
+- 🔍 **Scanne massivement** tous les Service Principals d'un tenant 
 - 📊 **Évalue le risque** via un scoring Tiered (Tier 1 = Directory.ReadWrite, RoleManagement… / Tier 2 = Mail, Files, Sites…)
 - 🚨 **Détecte les dérives** : escalade de permissions, changement de propriétaire, réactivation suspecte
 - ⚡ **Remédie automatiquement** : quarantaine (48h) puis désactivation des apps critiques
@@ -327,7 +327,7 @@ Le rapport HTML est **auto-suffisant** (zéro dépendance externe, pas de CDN). 
 - **Permissions applicatives** : L'octroi des App permissions (`Application.Read.All`, etc.) peut nécessiter un abonnement selon le type de tenant. Les permissions Déléguées fonctionnent sur tous les tenants.
 - **Mutex inter-machines** : Les mutex nommés (`Global\ShadowIT_*`) ne protègent que les threads d'une même machine. En CI/CD multi-agents, utilisez la sérialisation de pipeline.
 - **Timeout Azure Automation** : Le paramètre `-MaxExecutionMinutes 150` permet un soft-exit avant les 180 minutes du sandbox. Un kill par l'infrastructure reste possible et le trap global ne s'exécutera pas.
-- **Volumétrie** : Testé jusqu'à 100 000 Service Principals. Au-delà, la consommation mémoire de `$AllSPs` peut saturer la RAM du runner — envisager un pattern streaming en deux passes pour V6.
+- **Volumétrie** : théoriquement jusqu'à 100 000 Service Principals. Au-delà, la consommation mémoire de `$AllSPs` peut saturer la RAM du runner — envisager un pattern streaming en deux passes pour V6.
 - **Token expiry** : Sur des exécutions > 1 heure, le token Graph peut expirer. Le SDK tente un refresh automatique mais en cas d'échec, les SPs analysés après l'expiration généreront des erreurs 401 traitées comme permanentes.
 
 ---
